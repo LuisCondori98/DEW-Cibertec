@@ -7,9 +7,36 @@
     <title>sesion 1</title>
 </head>
 <body>
-    <h2 class="subtitulo">Este es un subtitulo</h2>
+    <h2 id="subtitulo">Este es un subtitulo</h2>
     <img src="./img/image1.png" alt="DragonBall" id="dragon">
     <p id="parrafo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, illo? Minima exercitationem iusto culpa maxime nulla esse dignissimos tempora sed ipsa. Optio mollitia voluptatem harum autem necessitatibus quae corporis quasi.</p>
 </body>
-<script src="./js/script.js"></script>
+<script>
+
+    let name = prompt("Como es tu nombre ")
+
+    alert("Hola " + name)
+
+    const subtitle = document.getElementById("subtitulo")
+    subtitle.textContent = "Hola " + name;
+    subtitle.style = "color: red;"
+
+    const image = document.getElementById("dragon")
+    
+    let original = "img/image1.png"
+    let otraImage = "img/image2.jpg"
+
+    const cambio = () => {
+
+        image.setAttribute("src", otraImage)
+    }
+
+    const retorno = () => {
+
+        image.setAttribute("src", original)
+    }
+
+    image.setAttribute("onmouseover", "cambio()")
+    image.setAttribute("onmouseout", "retorno()")
+</script>
 </html>
